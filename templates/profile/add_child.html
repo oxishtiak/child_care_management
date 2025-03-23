@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Add Child{% endblock %}
+
+{% block content %}
+<div class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6 mt-10 mb-12">
+    <h2 class="text-2xl font-semibold text-center mb-6">Add Child</h2>
+    <form method="POST" enctype="multipart/form-data" class="space-y-4">
+        {% csrf_token %}
+        
+        <div class="flex flex-col">
+            <label class="font-medium">Name:</label>
+            <div class="relative">
+                <input type="text" name="name" required class="w-full border rounded-md p-2 pl-10 focus:ring-2 focus:ring-blue-400">
+                <box-icon name='user' color='gray' class="absolute left-2 top-2.5"></box-icon>
+            </div>
+        </div>
+        
+        <div class="flex flex-col">
+            <label class="font-medium">Age:</label>
+            <div class="relative">
+                <input type="number" name="age" required class="w-full border rounded-md p-2 pl-10 focus:ring-2 focus:ring-blue-400">
+                <box-icon name='calendar' color='gray' class="absolute left-2 top-2.5"></box-icon>
+            </div>
+        </div>
+        
+        <div class="flex flex-col">
+            <label class="font-medium">Date of Birth:</label>
+            <div class="relative">
+                <input type="date" name="date_of_birth" required class="w-full border rounded-md p-2 pl-10 focus:ring-2 focus:ring-blue-400">
+                <box-icon name='calendar-alt' color='gray' class="absolute left-2 top-2.5"></box-icon>
+            </div>
+        </div>
+        
+        <div class="flex flex-col">
+            <label class="font-medium">Image:</label>
+            <div class="relative">
+                <input type="file" name="image" class="w-full border rounded-md p-2 focus:ring-2 focus:ring-blue-400">
+                
+            </div>
+        </div>
+        
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition-all">
+            Add Child
+        </button>
+    </form>
+</div>
+{% endblock %}

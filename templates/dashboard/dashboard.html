@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Staff Dashboard</title>
+</head>
+<body class="bg-gray-100">
+    <div class="font-[sans-serif] min-h-screen flex items-center justify-center">
+
+        <div class="bg-white max-w-2xl w-full mx-4 shadow-lg p-8 rounded-2xl">
+            <div class="mb-8 text-center">
+                <h3 class="text-gray-800 text-3xl font-semibold">Welcome Staff {{ user.username }}</h3>
+            </div>
+
+            <div class="space-y-6">
+                <a href="#" class="block w-full text-center py-3 px-4 text-sm font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition-all">
+                    Report Generate
+                </a>
+
+                <a href="#" class="block w-full text-center py-3 px-4 text-sm font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition-all">
+                    Bookings
+                </a>
+
+                <a href="{% url 'staff_logout' %}" class="block w-full text-center py-3 px-4 text-sm font-semibold rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none transition-all">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

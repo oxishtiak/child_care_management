@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Package{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-semibold text-center mb-6">Book Package</h2>
+        <p class="text-lg text-gray-700 mb-4">You are about to book the <strong>{{ package.name }}</strong> package for <strong>BDT {{ package.price }}</strong>.</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label class="block text-gray-700">Select Children:</label>
+                {% for child in children %}
+                <div class="flex items-center">
+                    <input type="checkbox" name="children" value="{{ child.id }}" class="mr-2">
+                    <label>{{ child.name }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Start Date:</label>
+                <input type="date" name="start_date" class="w-full border rounded-md p-2">
+            </div>
+            <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded-md transition-all">
+                Confirm Booking
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero Section -->
+    <div class="relative w-full h-screen flex items-center justify-center">
+        <img src="https://images.unsplash.com/flagged/photo-1551887373-6edba6dacbb1?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+             alt="ChildCare" class="absolute inset-0 w-full h-full object-cover brightness-50" />
+        
+        <div class="relative z-10 text-center text-white max-w-2xl px-6">
+            <p class="text-lg text-red-300">We Care Your Baby</p>
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mt-2">The Best Play Area <br> For Your Kids</h1>
+            <div class="mt-6 flex gap-4 justify-center">
+                <a href="{% url 'signup_parent' %}" class="px-6 py-3 bg-pink-500 text-white font-bold rounded-lg shadow-lg hover:bg-pink-600 transition-all">Get Started</a>
+                <a href="#" class="px-6 py-3 bg-pink-500 text-white font-bold rounded-lg shadow-lg hover:bg-pink-600 transition-all">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gradient-to-b from-pink-100 to-white text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-pink-500 font-semibold text-lg">What We Do</p>
+            <h2 class="text-4xl font-bold text-gray-800 mt-2">Nurturing & Educating Your Child</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-pink-500">
+                    <div class="text-pink-500 text-4xl mb-4">
+                        <i class='bx bx-game'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Play & Learn</h3>
+                    <p class="text-gray-600 mt-2">Engaging games that foster cognitive development and creativity.</p>
+                    <button class="mt-4 px-4 py-2 bg-pink-500 text-white rounded-lg">Read More</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-pink-500">
+                    <div class="text-pink-500 text-4xl mb-4">
+                        <i class='bx bx-book'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Comprehensive Programs</h3>
+                    <p class="text-gray-600 mt-2">Structured learning covering all essential childhood education aspects.</p>
+                    <button class="mt-4 px-4 py-2 bg-pink-500 text-white rounded-lg">Read More</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-pink-500">
+                    <div class="text-pink-500 text-4xl mb-4">
+                        <i class='bx bx-chalkboard'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Expert Educators</h3>
+                    <p class="text-gray-600 mt-2">Qualified and passionate teachers dedicated to child growth.</p>
+                    <button class="mt-4 px-4 py-2 bg-pink-500 text-white rounded-lg">Read More</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-pink-500">
+                    <div class="text-pink-500 text-4xl mb-4">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Health & Well-being</h3>
+                    <p class="text-gray-600 mt-2">Ensuring emotional and physical well-being for holistic development.</p>
+                    <button class="mt-4 px-4 py-2 bg-pink-500 text-white rounded-lg">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="container mx-auto max-w-6xl">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-pink-500 text-lg font-medium relative inline-block">
+                Our Events
+                <div class="absolute bottom-0 left-0 w-full h-0.5 bg-pink-500 rounded"></div>
+            </h2>
+            <h1 class="text-4xl font-bold text-navy-900 mt-4">Our Upcoming Events</h1>
+        </div>
+
+        <!-- Event Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Event Card 1 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Music Workshop" class="w-full h-48 object-cover rounded-t-3xl">
+                    <div class="absolute top-4 left-4 bg-blue-500 text-white px-4 py-1 rounded-full">
+                        29 Nov
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-6 text-sm mb-4">
+                        <div class="flex items-center gap-1">
+                            <i class="bx bx-time text-pink-500"></i>
+                            <span>10:00am - 12:00pm</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i class="bx bx-map text-pink-500"></i>
+                            <span>Dhaka</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Music & drawing workshop</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed purus consectetur.</p>
+                </div>
+            </div>
+
+            <!-- Event Card 2 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1613794713137-a78aba4be84a?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Study" class="w-full h-48 object-cover rounded-t-3xl">
+                    <div class="absolute top-4 left-4 bg-blue-500 text-white px-4 py-1 rounded-full">
+                        29 Nov
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-6 text-sm mb-4">
+                        <div class="flex items-center gap-1">
+                            <i class="bx bx-time text-pink-500"></i>
+                            <span>10:00am - 12:00pm</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i class="bx bx-map text-pink-500"></i>
+                            <span>Sylhet</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Why need study</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed purus consectetur.</p>
+                </div>
+            </div>
+
+            <!-- Event Card 3 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Health" class="w-full h-48 object-cover rounded-t-3xl">
+                    <div class="absolute top-4 left-4 bg-blue-500 text-white px-4 py-1 rounded-full">
+                        22 Feb
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-6 text-sm mb-4">
+                        <div class="flex items-center gap-1">
+                            <i class="bx bx-time text-pink-500"></i>
+                            <span>10:00am - 12:00pm</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i class="bx bx-map text-pink-500"></i>
+                            <span>Mymensingh</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Child health consciousness</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed purus consectetur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-pink-500 font-semibold text-lg">Our Testimonials</p>
+            <h2 class="text-4xl font-bold text-gray-800 mt-2">Parents Say About Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                
+                <div class="bg-pink-100 p-6 rounded-2xl shadow-lg border-t-4 border-pink-500 relative">
+                    <div class="absolute top-4 right-4 text-pink-500 text-3xl">
+                        <i class='bx bxs-quote-right'></i>
+                    </div>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1672527843075-2a7a0ca859ad?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="client" class="w-16 h-16 rounded-full border-4 border-pink-500">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Jeba Afrin</h3>
+                    <p class="text-gray-600 text-sm">Teacher</p>
+                    <div class="text-pink-500 mt-2">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="text-gray-600 mt-4">
+                        My Children have been attending this daycare for over a year now and I am very happy with the care they receive. The staff is very friendly and caring. 
+                    </p>
+                </div>
+                
+                <div class="bg-pink-100 p-6 rounded-2xl shadow-lg border-t-4 border-pink-500 relative">
+                    <div class="absolute top-4 right-4 text-pink-500 text-3xl">
+                        <i class='bx bxs-quote-right'></i>
+                    </div>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="client" class="w-16 h-16 rounded-full border-4 border-pink-500">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Dewan Nilim</h3>
+                    <p class="text-gray-600 text-sm">Engineer</p>
+                    <div class="text-pink-500 mt-2">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="text-gray-600 mt-4">I would recommend this daycare to anyone looking for a safe and caring environment for their children.</p>
+                </div>
+                
+                <div class="bg-pink-100 p-6 rounded-2xl shadow-lg border-t-4 border-pink-500 relative">
+                    <div class="absolute top-4 right-4 text-pink-500 text-3xl">
+                        <i class='bx bxs-quote-right'></i>
+                    </div>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="client" class="w-16 h-16 rounded-full border-4 border-pink-500">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Ishtiak Sabbir</h3>
+                    <p class="text-gray-600 text-sm">Lecturer</p>
+                    <div class="text-pink-500 mt-2">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="text-gray-600 mt-4">
+                        I am very happy with the care they receive. The staff is very friendly and caring.
+                        </p>
+                </div>
+            </div>
+            <div class="flex justify-center mt-8 space-x-2">
+                <span class="h-3 w-3 bg-blue-500 rounded-full"></span>
+                <span class="h-3 w-3 bg-gray-400 rounded-full"></span>
+                <span class="h-3 w-3 bg-pink-500 rounded-full"></span>
+            </div>
+        </div>
+    </section>
+{% endblock %}

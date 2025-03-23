@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Vibrant Packages{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+        <h2 class="text-base font-semibold text-pink-600 tracking-wide uppercase">Our Packages</h2>
+        <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Choose the Best Package for You
+        </p>
+        <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            We offer a variety of packages to suit your needs.
+        </p>
+    </div>
+
+    <div class="mt-10">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {% for package in packages %}
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <div class="p-6">
+                    <h3 class="text-lg leading-6 font-medium text-black">{{ package.name }}</h3>
+                    <p class="mt-4 text-sm text-gray-800">{{ package.description }}</p>
+                    <div class="mt-6">
+                        <span class="text-4xl font-extrabold text-black">BDT {{ package.price }}</span>
+                        <span class="text-base font-medium text-gray-200 text-pink-500">/ {{ package.duration_days }} days</span>
+                    </div>
+                </div>
+                <div class="p-6 bg-white">
+                    <a href="{% url 'booking' package.id %}" class="block w-full text-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-pink-600 hover:bg-pink-700 transition duration-300 ease-in-out transform hover:scale-105">
+                        Choose Package
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

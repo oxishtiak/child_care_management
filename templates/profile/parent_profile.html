@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}Parent Profile{% endblock %}
+{% block content %}
+<div class="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10 mb-12">
+    <div class="grid md:grid-cols-2 gap-10">
+        <!-- Left Section - Parent Profile -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2 mb-4">
+                <i class='bx bx-user-circle text-blue-600 text-3xl'></i> Parent Profile
+            </h2>
+
+            <form method="POST" class="space-y-4">
+                {% csrf_token %}
+
+                <div>
+                    <label class="block font-semibold text-gray-700">Username:</label>
+                    <div class="flex items-center border rounded-lg px-3 py-2 bg-gray-200 cursor-not-allowed">
+                        <box-icon name='user' color='gray' class='mr-2'></box-icon>
+                        <input type="text" name="username" value="{{ user.username }}" disabled
+                            class="ml-2 w-full bg-gray-200 focus:outline-none cursor-not-allowed">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-gray-700">Email:</label>
+                    <div class="flex items-center border rounded-lg px-3 py-2 bg-gray-200 cursor-not-allowed">
+                        <box-icon name='envelope' color='gray' class='mr-2'></box-icon>
+                        <input type="email" name="email" value="{{ user.email }}" disabled
+                            class="ml-2 w-full bg-gray-200 focus:outline-none cursor-not-allowed">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-gray-700">Phone:</label>
+                    <div
+                        class="flex items-center border rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
+                        <box-icon name='phone' color='gray' class='mr-2'></box-icon>
+                        <input type="text" name="phone" value="{{ parent.phone }}" required
+                            class="ml-2 w-full focus:outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-gray-700">Address:</label>
+                    <div
+                        class="flex items-center border rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
+                        <box-icon name='map' color='gray' class='mr-2'></box-icon>
+                        <input type="text" name="address" value="{{ parent.address }}" required
+                            class="ml-2 w-full focus:outline-none">
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    <i class='bx bx-save'></i> Update Profile
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Section - Children List -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold text-gray-800 flex items-center gap-2">
+                <box-icon name='plus-circle' color='gray'></box-icon> Children
+            </h3>
+
+            <a href="{% url 'add_child' %}" class="inline-block mt-4 text-blue-600 hover:underline">
+                Add Child <box-icon name='add-to-queue' color='gray'></box-icon>
+            </a>
+
+            <ul class="mt-4 space-y-3">
+                {% for child in children %}
+                <li class="flex items-center justify-between bg-white p-3 rounded-lg shadow">
+                    <div class="flex items-center gap-4">
+                        <img src="{{ child.image.url }}" alt="{{ child.name }}"
+                            class="w-12 h-12 rounded-full object-cover">
+                        <span class="font-medium">{{ child.name }}</span>
+                    </div>
+                    <div class="space-x-3">
+                        <a href="{% url 'edit_child' child.id %}" class="text-green-600 hover:underline">
+                            <i class='bx bx-edit'></i> Edit
+                        </a>
+                        <a href="{% url 'delete_child' child.id %}" onclick="return confirm('Are you sure?');"
+                            class="text-red-600 hover:underline">
+                            <i class='bx bx-trash'></i> Delete
+                        </a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

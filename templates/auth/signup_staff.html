@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Staff Signup</title>
+</head>
+<body>
+    <div class="font-[sans-serif] relative">
+        <div class="h-[240px] font-[sans-serif]">
+            <img src="https://images.unsplash.com/photo-1510154221590-ff63e90a136f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Banner Image" class="w-full h-full object-cover" />
+            <a href="{% url 'home' %}" class="absolute top-4 left-4 text-white flex items-center">
+                <box-icon name='arrow-back' color='#fff' class="text-white"></box-icon>
+                <span class="ml-2">Back to Home</span>
+            </a>
+        </div>
+
+        <div class="relative -mt-40 m-4">
+            <form method="POST" class="bg-white max-w-xl w-full mx-auto shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] p-6 sm:p-8 rounded-2xl">
+                {% csrf_token %}
+                <div class="mb-12">
+                    <h3 class="text-gray-800 text-3xl text-center">Register Now</h3>
+                </div>
+
+                <div>
+                    <label class="text-gray-800 text-xs block mb-2">Username</label>
+                    <div class="relative flex items-center">
+                        <input name="username" type="text" required class="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 pl-2 pr-8 py-3 outline-none" placeholder="Enter username" />
+                        <box-icon name='user' color='#bbb' class="absolute right-2"></box-icon>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <label class="text-gray-800 text-xs block mb-2">Email</label>
+                    <div class="relative flex items-center">
+                        <input type="email" name="email" required class="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 pl-2 pr-8 py-3 outline-none" placeholder="Enter Email Address" />
+                        <box-icon name='mail-send' color='#bbb' class="absolute right-2"></box-icon>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <label class="text-gray-800 text-xs block mb-2">Mobile</label>
+                    <div class="relative flex items-center">
+                        <input name="mobile" type="text" required class="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 pl-2 pr-8 py-3 outline-none" placeholder="Enter mobile number" />
+                        <box-icon name='phone' color='#bbb' class="absolute right-2"></box-icon>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <label class="text-gray-800 text-xs block mb-2">Password</label>
+                    <div class="relative flex items-center">
+                        <input name="password" type="password" required class="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 pl-2 pr-8 py-3 outline-none" placeholder="Enter password" />
+                        <box-icon name='lock-alt' color='#bbb' class="absolute right-2"></box-icon>
+                    </div>
+                </div>
+
+                <div class="flex items-center mt-8">
+                    <input id="is_staff" name="is_staff" type="checkbox" class="h-4 w-4 shrink-0 rounded" />
+                    <label for="is_staff" class="ml-3 block text-sm">
+                        Register as Staff
+                    </label>
+                </div>
+
+                <div class="mt-8">
+                    <button type="submit" class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold tracking-wider rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition-all">
+                        Register
+                    </button>
+                    <p class="text-gray-800 text-sm mt-4 text-center">Already have an account? <a href="{% url 'staff_login' %}" class="text-blue-500 font-semibold hover:underline ml-1">Login here</a></p>
+                </div>
+            </form>
+        </div>
+         
+    </div>
+</body>
+</html>
