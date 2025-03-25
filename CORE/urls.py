@@ -32,21 +32,7 @@ urlpatterns = [
     path('staff_logout/', staff_logout, name='staff_logout'),
     path('package/', packages, name='package'),
 
-    # Parent Urls
-    path('parent/profile/', parent_profile, name='parent_profile'),
-    path('parent/child/add/', add_child, name='add_child'),
-    path('parent/child/edit/<int:child_id>/', edit_child, name='edit_child'),
-    path('parent/child/delete/<int:child_id>/', delete_child, name='delete_child'),
 
-    # Booking Urls
-    path('book/<int:package_id>/', booking, name='booking'),
-    path('checkout/<int:booking_id>/', checkout, name='checkout'),
-    path('my-bookings/', my_bookings, name='my_bookings'),
-
-    # Dashboard Staff Urls
-    path('dashboard/', dashboard, name='dashboard'),
-
-    path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
